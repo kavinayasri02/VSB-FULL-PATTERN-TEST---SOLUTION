@@ -34,3 +34,20 @@ public class ReverseString{
         System.out.println("Reversed String : " + rev);
     }
 }
+
+// Using StringBuilder Method
+
+import java.util.*;
+public class ReverseString{
+    public static void main(String[]args){
+        Scanner kavi = new Scanner(System.in);
+        //Enter a String to be reversed
+        String k = kavi.nextLine();
+        String rev = new StringBuilder(k).reverse().toString();
+        System.out.println("Reversed String :" + rev);
+    }
+}
+
+
+Output : Kavinayasri
+         irsayanivak
