@@ -23,3 +23,35 @@ public class CheckAnagrams{
         }
     }
 }
+
+//Using Frequency Counter Method
+
+import java.util.*;
+public class CheckAnagrams{
+    public static void main(String[]args){
+        Scanner kavi = new Scanner(System.in);
+        String k  = kavi.nextLine().replaceAll("\\s","").toLowerCase();
+        String s = kavi.nextLine().replaceAll("\\s","").toLowerCase();
+        boolean isAnagram = true;
+        if(k.length() != s.length()){
+            isAnagram = false;
+        }else{
+            int[]freq = new int[26];
+            for(int i =0;i<k.length();i++){
+                freq[k.charAt(i) - 'a']++;
+                freq[s.charAt(i) - 'a']--;
+            }
+            for(int count : freq){
+                if(count != 0){
+                    isAnagram = false;
+                    break;
+                }
+            }
+        }
+            if(isAnagram){
+                System.out.println("The String are anagrams");
+        }else{
+            System.out.println("The Strings are not anagrams");
+        }
+    }
+}
