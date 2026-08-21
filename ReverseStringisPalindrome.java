@@ -44,3 +44,22 @@ public class ReverseStringisPalindrome{
       }
 }
 
+//Convention method using for loop
+
+import java.util.*;
+public class ReverseStringisPalindrome{
+    public static void main(String[] args) {
+        Scanner kavi = new Scanner(System.in);
+        String k = kavi.nextLine();
+        String str = k.toLowerCase();
+        String reverse = "";
+        for(int i = str.length()-1;i>=0;i--){
+            reverse += str.charAt(i);
+        }
+        if(str.equals(reverse)){
+            System.out.println(reverse + " is a Palindrome");
+        }else{
+            System.out.println(reverse + " is not a Palindrome");
+        }
+    }
+}
