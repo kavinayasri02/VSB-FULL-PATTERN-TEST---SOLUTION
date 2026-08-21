@@ -27,3 +27,28 @@ public class FirstNonRepeatingChars {
          }
     }
 }
+
+//Using Java's Built in String Methods
+
+import java.util.*;
+public class FirstNonRepeatingChars{
+    public static void main(String[]args){
+        Scanner kavi = new Scanner(System.in);
+        String  k = kavi.nextLine();
+        char result = ' ';
+        boolean found = false;
+        for(int i =0;i<k.length();i++){
+            char ch = k.charAt(i);
+            if(k.indexOf(ch) == k.lastIndexOf(ch)){
+                result = ch;
+                found = true;
+                break;
+            }
+        }
+        if(found){
+            System.out.println("First non-repeating character is: " + result);
+        }else{
+            System.out.println("No non-repeating character found");
+        }
+    }
+}
