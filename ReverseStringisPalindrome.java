@@ -25,3 +25,22 @@ public class ReverseStringisPalindrome {
         }
     }
 }
+
+//Using StringBuilder MEthod
+
+import java.util.*;
+public class ReverseStringisPalindrome{
+      public static void main(String[]args){
+        Scanner kavi = new Scanner(System.in);
+        //Enter a String to be reversed
+        String k = kavi.nextLine();
+        String str = k.toLowerCase();
+        String rev = new StringBuilder(str).reverse().toString();
+        if(str.equals(rev)){
+            System.out.println(rev + " is a Palindrome");
+        }else{
+            System.out.println(rev + " is not a Palindrome");
+        }
+      }
+}
+
