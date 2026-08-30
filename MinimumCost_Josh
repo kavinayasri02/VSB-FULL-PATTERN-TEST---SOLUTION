@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner kavi = new Scanner(System.in);
+        int n = kavi.nextInt();
+        int m1 = kavi.nextInt();
+        int p1 = kavi.nextInt();
+        int m2 = kavi.nextInt();
+        int p2 = kavi.nextInt();
+        int minCost = Integer.MAX_VALUE;
+        for(int x = 0;x*m1 <=n;x++){
+            int remApp = n -(x*m1);
+            if(remApp % m2 == 0){
+                int y = remApp / m2;
+                int currCost = (x * p1) + (y * p2);
+                if(currCost < minCost){
+                    minCost = currCost;
+                }
+            }
+        }if(minCost == Integer.MAX_VALUE){
+            System.out.println(-1);
+        }else{
+            System.out.println(minCost);
+        }
+    }
+}
