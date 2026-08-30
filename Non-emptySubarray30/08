@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner kavi = new Scanner(System.in);
+        int n = kavi.nextInt();
+        int[]nums = new int[n];
+        for(int i =0;i<n;i++){
+            nums[i] = kavi.nextInt();
+        }int k = kavi.nextInt();
+        Map<Integer,Integer> rMap = new HashMap<>();
+        rMap.put(0,1);
+        int count = 0;
+        int psum = 0;
+        for(int num : nums){
+            psum += num;
+            int rem = psum % k;
+            if(rem < 0){
+                rem += k;
+            }
+            if(rMap.containsKey(rem)){
+                count += rMap.get(rem);
+            }
+            rMap.put(rem,rMap.getOrDefault(rem,0)+1);
+        }
+        System.out.println(count);
+    }
+}
