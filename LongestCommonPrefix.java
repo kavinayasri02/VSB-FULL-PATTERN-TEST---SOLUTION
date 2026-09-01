@@ -27,3 +27,29 @@ public class LongestCommonPrefix{
     return prefix;
    }
 }
+
+//Using Sorting method
+import java.util.Arrays;
+public class Solution {
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        // Sort the array alphabetically
+        Arrays.sort(strs);
+        // Get the first and last strings after sorting
+        String first = strs[0];
+        String last = strs[strs.length - 1];
+        int index = 0;
+        // Compare characters of the first and last strings
+        while (index < first.length() && index < last.length()) {
+            if (first.charAt(index) == last.charAt(index)) {
+                index++;
+            } else {
+                break;
+            }
+        }
+        // Return the substring that matches
+        return first.substring(0, index);
+    }
+}
