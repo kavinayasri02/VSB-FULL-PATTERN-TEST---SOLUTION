@@ -1,30 +1,32 @@
-import java.util.Scanner;
-public class DiamondPattern {
-    public static void main(String[]args){
-        Scanner kavi = new Scanner(System.in);
-        int n = kavi.nextInt();
-        int mid = (n/2)+1;
-        for(int i = 1 ; i<=n;i++){
-            int totalnosinRow;
-            int totalSpacesinRow;
-            if(i<=mid){
-                totalnosinRow = i;
-                totalSpacesinRow = mid - i;
-            }else{
-                totalnosinRow = n-i+1;
-                totalSpacesinRow = i - mid;
-            }
-            for(int j =1;j<= totalSpacesinRow;j++){
+import java.util.*;
+public class DiamondPattern{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int mid = n / 2 + 1;
+        for(int i=1;i<=mid;i++){
+            for(int j=1;j<=mid-i;j++){
                 System.out.print(" ");
             }
-            for(int j=1;j<=totalnosinRow;j++){
-                System.out.print(j);
-                if(j<totalnosinRow){
+            for(int j=1;j<=i;j++){
+                if(j>1){
                     System.out.print("*");
                 }
+                System.out.print(j);
             }
-System.out.println();
+            System.out.println();
         }
-        kavi.close();
+        for(int i = mid-1;i>=1;i--){
+            for(int j =1;j<=mid-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=i;j++){
+                if(j>1){
+                    System.out.print("*");
+                }
+                System.out.print(j);
+            }
+            System.out.println();
         }
     }
+}
