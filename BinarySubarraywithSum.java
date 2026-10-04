@@ -21,3 +21,4 @@ public class BinarySubarraywithSum {
         System.out.println(count);
     }
 }
+output : 
